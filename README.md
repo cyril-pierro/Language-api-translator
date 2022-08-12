@@ -6,7 +6,7 @@
 
 Language translator api helps translate a language.
 The API uses the [T5-base-model](https://huggingface.co/t5-base) from huggingface.co to
-translate languages and [HappyTransformer](https://happytransformer.com/text-to-text/)for
+translate languages and [HappyTransformer](https://happytransformer.com/text-to-text/) for
 Model and tokenization
 
 ## How it works
