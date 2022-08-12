@@ -1,6 +1,4 @@
-=======================
-LANGUAGE TRANSLATOR API
-========================
+# LANGUAGE TRANSLATOR API
 
 ## Description
 
