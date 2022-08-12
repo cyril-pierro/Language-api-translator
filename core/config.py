@@ -1,18 +1,21 @@
 import os
 
-import torch
+import happytransformer  # type: ignore
 from pydantic import BaseSettings
 
 store_model: dict = {}
 
 
-async def get_model():
+def get_model():
     model = store_model.get("model")
-    if not model:
-        model_path = str(os.getenv("MODEL_PATH"))
-        model = torch.load(os.path.expanduser(model_path))
-        store_model["model"] = model
-    return model
+    if model:
+        return model
+
+    model_path = str(os.getenv("MODEL_PATH"))
+    model = happytransformer.HappyTextToText(
+        model_name="t5-base", load_path=os.path.expanduser(model_path)
+    )
+    store_model["model"] = model
 
 
 class Settings(BaseSettings):
