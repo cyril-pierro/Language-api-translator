@@ -14,8 +14,9 @@ The api takes three parameters namely:
 1.  source_language
 2.  destination_language
 3.  input_text
-    \*\*NOTE: The source_language and destination_language only
-    accept values ["GERMAN", "ENGLISH", "ROMANIAN", "FRENCH"]
+
+**NOTE**: The source_language and destination_language only
+accept values ["GERMAN", "ENGLISH", "ROMANIAN", "FRENCH"]
 
 ```python
     response = requests.post('localhost/api/v1/translate', data={
@@ -29,5 +30,6 @@ The api takes three parameters namely:
 
 ## System Requirements
 
-RAM| GPU| ML framework|
-16G| VGA| pytorch|
+| RAM | GPU | ML framework |
+| :-: | :-: | :----------: |
+| 16G | VGA |   pytorch    |
