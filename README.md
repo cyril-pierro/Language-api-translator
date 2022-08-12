@@ -26,8 +26,8 @@ accept values ["GERMAN", "ENGLISH", "ROMANIAN", "FRENCH"]
     >>> "{'translated_text': 'Vielen Dank für Ihre gestrige Wortmeldung'}"
 ```
 
-## System Requirements
+## System Requirements and Tech Stack
 
-| RAM | GPU | ML framework |
-| :-: | :-: | :----------: |
-| 16G | VGA |   pytorch    |
+| RAM | GPU | ML framework | Web Framework |
+| :-: | :-: | :----------: | :------------ |
+| 16G | VGA |   Pytorch    | FastAPI       |
