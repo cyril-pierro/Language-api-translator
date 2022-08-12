@@ -1,6 +1,6 @@
 # LANGUAGE TRANSLATOR API
 
-![alt text](https://modyolo.com/all-language-translate-app.html)
+![alt text](http://nyxcore.com/wp-content/uploads/2017/01/Mulang_Banner.jpg)
 
 ## Description
 
