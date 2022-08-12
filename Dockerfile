@@ -2,15 +2,16 @@ FROM python:3.9-slim-buster
 RUN mkdir /model
 WORKDIR /app
 COPY . /app/
-ENV MODEL_PATH=/model/model.pt
+RUN pip install uvicorn
+RUN export MODEL_PATH=/model/model.pt
 RUN pip install poetry
+RUN  poetry env use python3
 RUN poetry install 
-RUN echo "Training model....."
+RUN echo "Download model....."
 RUN echo "from happytransformer import HappyTextToText, TTSettings" >> script.py
 RUN echo "model = HappyTextToText('T5', 't5-base')" >> script.py
 RUN echo "model.save('/model/model.pt')" >> script.py
-RUN python script.py
-
+RUN poetry run python3 script.py
 EXPOSE 8000
-ENTRYPOINT [ "uvicorn","main:app --reload"]
+CMD ["uvicorn", "main:app --reload"]
 
