@@ -1,6 +1,6 @@
 # LANGUAGE TRANSLATOR API
 
-[!alt](https://modyolo.com/all-language-translate-app.html)
+![alt text](https://modyolo.com/all-language-translate-app.html)
 
 ## Description
 
