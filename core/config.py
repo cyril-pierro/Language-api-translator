@@ -6,7 +6,7 @@ from pydantic import BaseSettings
 store_model: dict = {}
 
 
-def get_model():
+def initialize_model():
     model = store_model.get("model")
     if model:
         return model

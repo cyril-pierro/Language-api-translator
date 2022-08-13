@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from core.config import get_model
+from core.config import initialize_model
 from schemas.translate import TranslateText
 
 router = APIRouter()
@@ -8,7 +8,7 @@ router = APIRouter()
 
 @router.post("/translate")
 async def translate_text(data: TranslateText):
-    model = get_model()
+    model = initialize_model()
     translated_text = model.generate_text(
         f"translate {data.source_language} to \
             {data.destination_language}: {data.input_text}"

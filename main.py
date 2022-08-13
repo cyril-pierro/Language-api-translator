@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 
 from api.v1 import translate
-from core.config import get_model, setting
+from core.config import initialize_model, setting
 
-get_model()
+initialize_model()
 
 app = FastAPI(
     docs_url="/",
