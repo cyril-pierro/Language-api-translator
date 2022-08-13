@@ -33,7 +33,9 @@ Steps to setup Model_path
 ```
 
 **Note** To Run the application set an Environment variable
-`bash export MODEL_PATH="location of the model u created" uvicorn main:app --reload --port 8080 --host 0.0.0.0 `
+
+````bash export MODEL_PATH="location of the model u created" uvicorn main:app --reload --port 8080 --host 0.0.0.0
+``` `
 
 ## How it works
 
@@ -54,7 +56,7 @@ accept values ["GERMAN", "ENGLISH", "ROMANIAN", "FRENCH"]
         })
     print(reponse.json())
     >>> "{'translated_text': 'Vielen Dank für Ihre gestrige Wortmeldung'}"
-```
+````
 
 ## System Requirements and Tech Stack
 
