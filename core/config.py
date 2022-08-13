@@ -3,23 +3,20 @@ import os
 import happytransformer  # type: ignore
 from pydantic import BaseSettings
 
-store_model: dict = {}
 
+class T5Model:
+    def __init__(self):
+        self._store_model: dict = {}
 
-def initialize_model():
-    """Initialize model
-    Load the model on startup of the application
-    """
-    # store the model in memory after initialization
-    model = store_model.get("model")
-    if model:
-        return model
+    def initialize_model(self):
+        model_path = str(os.getenv("MODEL_PATH"))
+        model = happytransformer.HappyTextToText(
+            model_name="t5-base", load_path=os.path.expanduser(model_path)
+        )
+        self._store_model["model"] = model
 
-    model_path = str(os.getenv("MODEL_PATH"))
-    model = happytransformer.HappyTextToText(
-        model_name="t5-base", load_path=os.path.expanduser(model_path)
-    )
-    store_model["model"] = model
+    def get_model(self):
+        return self._store_model.get("model")
 
 
 class Settings(BaseSettings):
@@ -30,3 +27,4 @@ class Settings(BaseSettings):
 
 
 setting = Settings()
+t5_base = T5Model()

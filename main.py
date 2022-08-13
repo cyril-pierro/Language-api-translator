@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 
 from api.v1 import translate
-from core.config import initialize_model, setting
+from core.config import setting, t5_base
 
-initialize_model()
+t5_base.initialize_model()
 
 app = FastAPI(
     docs_url="/",
