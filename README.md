@@ -20,15 +20,11 @@ During training or initialization of the model through HappyTransformer's HappyT
 
 Steps to setup Model_path
 
-```bash
-    mkdir model
-    cd model
-    wget https://huggingface.co/t5-base/blob/main/config.json .
-    wget https://huggingface.co/t5-base/blob/main/spiece.model .
-
-    wget https://huggingface.co/t5-base/blob/main/tokenizer.json .
-
-    wget https://huggingface.co/t5-base/blob/main/pytorch_model.bin .
+```python
+    from happytransformer import HappyTextToText, TTSettings
+    model = HappyTextToText('T5', 't5-base')
+    model.save('/model)
+    # where /model is the directory to store the model
 
 ```
 
