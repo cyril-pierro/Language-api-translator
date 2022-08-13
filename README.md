@@ -6,8 +6,31 @@
 
 Language translator api helps translate a language.
 The API uses the [T5-base-model](https://huggingface.co/t5-base) from huggingface.co to
-translate languages and [HappyTransformer](https://happytransformer.com/text-to-text/) for
-Model and tokenization
+translate languages and [HappyTransformer](https://happytransformer.com/text-to-text/) for both
+Model initialization and tokenization
+
+During training or initialization of the model through HappyTransformer's HappyTextToText Model
+
+```python
+    from happytransformer import HappyTextToText
+    # --------------------------------------#
+    model = HappyTextToText("T5", "t5-base", load_path=Model_path)
+    ## Model_path is the location of the directory that contains the necessary files to form a model
+```
+
+Steps to setup Model_path
+
+```bash
+    mkdir model
+    cd model
+    wget https://huggingface.co/t5-base/blob/main/config.json .
+    wget https://huggingface.co/t5-base/blob/main/spiece.model .
+
+    wget https://huggingface.co/t5-base/blob/main/tokenizer.json .
+
+    wget https://huggingface.co/t5-base/blob/main/pytorch_model.bin .
+
+```
 
 ## How it works
 
