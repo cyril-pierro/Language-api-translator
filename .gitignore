@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.sh
+run_setup_dependencies.sh
 # C extensions
 *.so
 
