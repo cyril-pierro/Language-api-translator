@@ -32,6 +32,7 @@ Steps to setup Model_path
 
 ```bash
     export MODEL_PATH="location of the model u created"
+    # Eg. export MODEL_PATH=/model
     uvicorn main:app --reload --port 8080 --host 0.0.0.0
 ```
 
