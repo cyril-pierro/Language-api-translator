@@ -13,4 +13,4 @@ async def translate_text(data: TranslateText):
         f"translate {data.source_language} to \
             {data.destination_language}: {data.input_text}"
     )
-    return {"translated_text": translated_text.text}
+    return {"translated_text": translated_text.text.split(".")[0]}
