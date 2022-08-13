@@ -35,8 +35,8 @@ Steps to setup Model_path
 **Note** To Run the application set an Environment variable.
 
 ```bash
-    mkdir model
-    export MODEL_PATH="location of the model u created" uvicorn main:app --reload --port 8080 --host 0.0.0.0
+    export MODEL_PATH=${"location of the model u created"}
+    uvicorn main:app --reload --port 8080 --host 0.0.0.0
 ```
 
 ## How it works
