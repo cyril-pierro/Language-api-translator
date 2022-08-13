@@ -7,6 +7,10 @@ store_model: dict = {}
 
 
 def initialize_model():
+    """Initialize model
+    Load the model on startup of the application
+    """
+    # store the model in memory after initialization
     model = store_model.get("model")
     if model:
         return model
