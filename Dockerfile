@@ -2,10 +2,11 @@ FROM python:3.9-slim-buster
 RUN mkdir /model
 WORKDIR /app
 COPY . /app/
+COPY pyproject.toml  /app/
 ENV MODEL_PATH=/model/model.pt
+ENV PYTHONPATH=${PYTHONPATH}:${PWD}
 RUN pip install poetry
-RUN pip install uvicorn
-RUN  poetry env use python3
+RUN poetry config virtualenvs.create false
 RUN poetry install 
 RUN echo "Download model....."
 RUN echo "from happytransformer import HappyTextToText, TTSettings" >> script.py
